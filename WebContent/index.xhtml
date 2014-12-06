@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"  
+    xmlns:f="http://java.sun.com/jsf/core"  
+>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Managed Bean Hibernate</title>
+</head>
+<body>
+
+	<h:form id="formulario">
+	
+	<p>
+		<h:outputLabel for="numero" value="numero" />
+		<h:inputText size="30" id="numero" name="numero" placeholder="000" value="#{ManagedBeanControle.classe.numero}" tabindex="1" required="true" >
+			<f:validateLength minimum="3" maximum="16"></f:validateLength> 
+		</h:inputText>
+		<h:message for="numero"></h:message>
+		<h:outputLabel for="nome" value="nome" />
+		<h:inputText size="30" id="nome" name="nome" placelholder="nome" value="#{ManagedBeanControle.classe.nome}" tabindex="2" required="true" >
+			<f:validateLength minimum="3" maximum="16"></f:validateLength> 
+		</h:inputText>
+		<h:message for="nome"></h:message>
+		<h:outputLabel for="data" value="data" />
+		<h:inputText size="30" id="data" name="data" placeholder="00/00/0000" value="#{ManagedBeanControle.classe.data}" tabindex="3" >
+			<f:convertDateTime pattern="dd/MM/yyyy"/> 
+		</h:inputText>
+		<h:message for="data"></h:message>
+		<!--
+		Pattern p=Pattern.compile("d//s//");
+		Matcher m=p.matcher(String);
+			=m.matches();//RETORNA true OU false
+		-->
+	</p>
+	<h:commandButton value="Entrar" action="#{ManagedBeanControle.LogIn}" tabindex="4"/>
+	
+	<!--
+	<h:link value="Cadastre-se" outcome="/publico/geral" >
+		<f:param name="login" value="login" />
+		<f:param name="senha" value="senha" />
+	</h:link>
+	 -->
+	 
+	</h:form>
+
+</body>
+</html>

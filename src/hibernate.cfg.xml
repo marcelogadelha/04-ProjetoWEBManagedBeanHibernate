@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">
+			<!-- DRIVER -->
+			<!-- com.mysql.jdbc.Driver --><!-- MySQL -->
+			<!--com.ibm.db2.jcc.DB2Driver --><!-- IBM DB2 -->
+			<!-- com.microsoft.sqlserver.jdbc.SQLServerDriver --><!-- SQLServer -->
+			<!-- sun.jdbc.odbc.JdbcOdbcDriver --><!-- ODBC -->
+			<!-- sun.jdbc.odbc.JdbcOdbcDriver --><!-- MS Access -->
+			org.postgresql.Driver<!-- PostgreSQL -->
+		</property>
+		<property name="hibernate.connection.url">
+			<!-- URL DA CONEXÃO -->jdbc:postgresql://127.0.0.1:5432/banco
+		</property>
+		<property name="hibernate.connection.username">
+			<!-- USUÁRIO -->postgres
+		</property>
+		<property name="hibernate.connection.password">
+			<!-- SENHA -->G@delha
+		</property>
+		<property name="hibernate.hbm2ddl.auto">
+			<!-- validate | update | create | create-drop -->update
+		</property>
+		
+		<!-- exibir SQL gerados -->			<property name="hibernate.show_sql">true</property>
+											<property name="hibernate.format_sql">true</property>
+											<property name="hibernate.jdbc.batch_size">20</property>
+		<!-- 
+											<property name="c3p0.acquire_increment">1</property>
+											<property name="c3p0.idle_test_period">100</property>
+											<property name="c3p0.max_size">100</property>
+											<property name="c3p0.max_statements">0</property>
+											<property name="c3p0.min_size">10</property>
+											<property name="c3p0.timeout">100</property>
+		-->
+		
+		<property name="hibernate.dialect">
+			<!-- DIALETO DO BANCO -->
+			<!-- org.hibernate.dialect.DB2Dialect --><!-- DB2 -->
+			<!-- org.hibernate.dialect.HSQLDialect --><!-- HipersonicSQL -->
+			<!-- org.hibernate.dialect.InformixDialect --><!-- Informix -->
+			<!-- org.hibernate.dialect.IngresDialect --><!-- Ingres -->
+			<!-- org.hibernate.dialect.InterbaseDialect --><!-- Interbase -->
+			<!-- org.hibernate.dialect.PointbaseDialect --><!-- Pointbase -->
+			<!-- org.hibernate.dialect.PostgreSQLDialect --><!-- PostgreSQL -->
+			<!-- org.hibernate.dialect.MckoiDialect --><!-- Mckoi SQL -->
+			<!-- org.hibernate.dialect.SQLServerDialect --><!-- Microsoft SQL Server -->
+			<!-- org.hibernate.dialect.MySQLDialect --><!-- MySQL -->
+			<!-- org.hibernate.dialect.OracleDialect --><!-- Oracle -->
+			<!-- org.hibernate.dialect.Oracle9Dialect --><!-- Oracle 9 -->
+			<!-- org.hibernate.dialect.ProgressDialect --><!-- Progress -->
+			<!-- org.hibernate.dialect.FrontbaseDialect --><!-- FrontBase -->
+			<!-- org.hibernate.dialect.SAPDBDialect --><!-- SAP DB -->
+			<!-- org.hibernate.dialect.SybaseDialect --><!-- Sybase -->
+			<!-- org.hibernate.dialect.SybaseAnywhereDialect --><!-- Sybase Anywhere -->
+			org.hibernate.dialect.PostgreSQLDialect
+		</property>
+		<!-- MAPEANDO AS CLASSES -->
+		<mapping class="br.com.projeto.web.model.Classe"/>
+	</session-factory>
+	
+</hibernate-configuration>
